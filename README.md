@@ -11,5 +11,6 @@ pip install
 ## Run
 
 ```
-python main.py
+source -m venv/bin/activate
+python main.py <speed coeficent>
 ```

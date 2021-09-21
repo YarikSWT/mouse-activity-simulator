@@ -1,6 +1,7 @@
 from pynput.mouse import Button, Controller
 import time
 import random
+import sys
 
 def test(mouse):
     # Read pointer position
@@ -31,15 +32,20 @@ def click(mouse):
     mouse.press(Button.left)
     mouse.release(Button.left)
 
-def loop(mouse):
-    interval = random.randint(3, 10) / 2
+def loop(mouse, speed_coeficient):
+    interval = random.randint(3, 10) / speed_coeficient
     click(mouse)
     time.sleep(interval)
 
 def main():
+    if(len(sys.argv) == 1):
+        speed_coeficient = 4
+    else:
+        speed_coeficient = sys.argv[1]
+    print('[ARGS]', 'speed_coeficient = ', speed_coeficient)
     mouse = Controller()
     while True:
-        loop(mouse)
+        loop(mouse, speed_coeficient)
 
 if __name__ == "__main__":
     main()
