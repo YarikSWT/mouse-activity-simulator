@@ -41,7 +41,7 @@ def main():
     if(len(sys.argv) == 1):
         speed_coeficient = 4
     else:
-        speed_coeficient = sys.argv[1]
+        speed_coeficient = int(sys.argv[1])
     print('[ARGS]', 'speed_coeficient = ', speed_coeficient)
     mouse = Controller()
     while True:
